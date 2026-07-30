@@ -10,13 +10,14 @@ interface Message {
 }
 
 const botResponses: Record<string, string> = {
-  default: "I'm here to help! Ask me about our cleaning services, pricing, or availability.",
-  hello: "Hello! Welcome to CleanSwift. How can I assist you today?",
-  price: "Our home cleaning starts from $49, office cleaning from $79, and apartment cleaning from $59. Prices vary based on space and specific needs.",
-  booking: "You can book a service by clicking the 'Book Now' button on any service card. It takes just 2 minutes!",
-  availability: "We are available 24/7 for bookings. Cleaners are available daily in most areas.",
-  trusted: "Yes! All our cleaners are verified professionals with background checks. We offer 100% satisfaction guarantee.",
-  thanks: "You are welcome! Is there anything else I can help with?",
+  default: "Halo! Saya siap membantu. Tanya aku tentang layanan kebersihan kami, harga, atau ketersediaan.",
+  hello: "Halo! Selamat datang di KliknClean. Apa yang bisa saya bantu?",
+  price: "Harga kami bervariasi tergantung layanan. Layanan AC dimulai dari Rp150.000, General Cleaning dari Rp200.000. Cek aplikasi untuk harga lengkap!",
+  booking: "Mudah! Klik tombol 'Pesan Sekarang' dan pilih layanan yang kamu butuhkan. Hanya butuh 2 menit!",
+  availability: "Kami tersedia 24/7 untuk pemesanan. Helper kami siap melayani di area Jakarta, Tangerang, Depok, Bekasi, dan Bogor.",
+  trusted: "Tentu! Semua helper kami sudah terverifikasi dan background checked. Kami jamin kepuasan 100%!",
+  thanks: "Sama-sama! Ada yang lain yang bisa dibantu?",
+  promo: "Saat ini ada promo spesial untuk member baru! Download app dan dapatkan diskon 20% untuk layanan pertama.",
 }
 
 export function Chatbot() {
@@ -25,7 +26,7 @@ export function Chatbot() {
     {
       id: '1',
       type: 'bot',
-      text: "Hi there! 👋 I'm your CleanSwift assistant. How can I help you today?",
+      text: "Halo! 👋 Saya asisten KliknClean. Ada yang bisa dibantu?",
     },
   ])
   const [inputValue, setInputValue] = useState('')
@@ -203,7 +204,7 @@ export function Chatbot() {
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    placeholder="Type your message..."
+                    placeholder="Ketik pesan kamu..."
                     className="flex-1 rounded-lg border border-border bg-input px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                   <motion.button
@@ -213,7 +214,7 @@ export function Chatbot() {
                     disabled={!inputValue.trim() || isTyping}
                     className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all disabled:opacity-50"
                   >
-                    Send
+                    Kirim
                   </motion.button>
                 </div>
               </div>

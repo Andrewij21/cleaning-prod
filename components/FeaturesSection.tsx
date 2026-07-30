@@ -4,34 +4,28 @@ import { motion } from 'framer-motion'
 
 const features = [
   {
-    icon: '⚡',
-    title: 'Quick Booking',
-    description: 'Book a cleaning service in just 2 minutes. No hassle, no complications.',
+    title: 'Tersebar Luas di Indonesia',
+    description: 'Hadir di Jakarta, Tangerang, Depok, Bekasi, Bogor,',
+    bgColor: 'bg-primary',
+    textColor: 'text-white',
   },
   {
-    icon: '🔐',
-    title: 'Verified Cleaners',
-    description: 'All our professionals are background-checked and fully trained.',
+    title: 'Bisa Pilih Helper Sesuka Kamu',
+    description: 'Langganan Prepaid, kamu bisa pilih helper favorit kamu.',
+    bgColor: 'bg-secondary',
+    textColor: 'text-white',
   },
   {
-    icon: '💰',
-    title: 'Transparent Pricing',
-    description: 'No hidden fees. You know exactly what you are paying for.',
+    title: 'Privasi Kamu Aman!',
+    description: 'Chat dan komunikasi hanya di aplikasi, aman no tipu-tipu!',
+    bgColor: 'bg-[#20C997]',
+    textColor: 'text-white',
   },
   {
-    icon: '⭐',
-    title: 'Quality Guaranteed',
-    description: 'If you are not satisfied, we will return and reclean for free.',
-  },
-  {
-    icon: '📱',
-    title: 'Real-time Tracking',
-    description: 'Track your cleaner in real-time and get live updates.',
-  },
-  {
-    icon: '🛡️',
-    title: 'Insurance Coverage',
-    description: 'Every service is covered by our comprehensive insurance policy.',
+    title: 'Bayar Pake Apa Aja Bisa!',
+    description: 'Metode pembayaran favorit kamu ada semua, mulai dari dompet',
+    bgColor: 'bg-[#1a2332]',
+    textColor: 'text-white',
   },
 ]
 
@@ -69,12 +63,9 @@ export function FeaturesSection() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Why Choose CleanSwift?
+          <h2 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
+            Kenapa Harus KliknClean
           </h2>
-          <p className="mt-4 text-lg text-foreground/60">
-            We have everything you need for a spotless home
-          </p>
         </motion.div>
 
         {/* Features Grid */}
@@ -83,23 +74,22 @@ export function FeaturesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
         >
           {features.map((feature, index) => (
             <motion.div key={index} variants={itemVariants}>
               <motion.div
                 whileHover={{ y: -4 }}
-                className="group rounded-lg border border-border/50 bg-card p-6 transition-all hover:border-primary/30 hover:shadow-lg"
+                className={`${feature.bgColor} ${feature.textColor} rounded-xl p-8 transition-all hover:shadow-xl cursor-pointer min-h-[200px] flex flex-col justify-between`}
               >
-                <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3 text-3xl">
-                  {feature.icon}
+                <div>
+                  <h3 className="mb-3 text-xl font-bold">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm opacity-90 leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-foreground">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">
-                  {feature.description}
-                </p>
               </motion.div>
             </motion.div>
           ))}

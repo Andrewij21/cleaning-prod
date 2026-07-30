@@ -9,7 +9,7 @@ export function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
     >
       <div className="container flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
@@ -17,7 +17,7 @@ export function Header() {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold text-primary"
           >
-            ✨ CleanSwift
+            Klik<span className="text-foreground">N</span>Clean
           </motion.div>
         </Link>
 
@@ -26,28 +26,28 @@ export function Header() {
             href="#services"
             className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
           >
-            Services
+            Layanan
           </Link>
           <Link
             href="#features"
             className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
           >
-            Features
+            Tentang Kami
           </Link>
           <Link
             href="#contact"
             className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
           >
-            Contact
+            Blog
           </Link>
         </nav>
 
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="rounded-lg bg-primary px-6 py-2 text-sm font-semibold text-primary-foreground transition-all hover:shadow-lg"
+          className="rounded-full border-2 border-foreground px-6 py-2 text-sm font-semibold text-foreground transition-all hover:bg-foreground hover:text-background"
         >
-          Book Now
+          Download App
         </motion.button>
       </div>
     </motion.header>

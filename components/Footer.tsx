@@ -4,62 +4,52 @@ import { motion } from 'framer-motion'
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-card">
+    <footer className="bg-foreground text-background">
       <div className="container px-4 py-12 md:py-16">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="grid gap-8 md:grid-cols-4"
+          className="grid gap-12 md:grid-cols-4"
         >
           {/* Brand */}
           <div>
-            <h3 className="text-lg font-bold text-primary">✨ CleanSwift</h3>
-            <p className="mt-2 text-sm text-foreground/60">
-              Making homes spotlessly clean, one booking at a time.
+            <h3 className="text-lg font-bold text-accent">KlikNClean</h3>
+            <p className="mt-4 text-sm opacity-80">
+              Jasa kebersihan rumah terlengkap se-Indonesia
             </p>
           </div>
 
-          {/* Services */}
+          {/* Lokasi */}
           <div>
-            <h4 className="font-semibold text-foreground">Services</h4>
-            <ul className="mt-4 space-y-2 text-sm text-foreground/60">
-              <li>
-                <a href="#" className="transition-colors hover:text-foreground">
-                  Home Cleaning
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-foreground">
-                  Office Cleaning
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-foreground">
-                  Apartment Cleaning
-                </a>
-              </li>
+            <h4 className="font-semibold">Lokasi Layanan</h4>
+            <ul className="mt-4 space-y-2 text-sm opacity-70">
+              <li>Jakarta</li>
+              <li>Tangerang</li>
+              <li>Depok</li>
+              <li>Bekasi</li>
+              <li>Bogor</li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Links */}
           <div>
-            <h4 className="font-semibold text-foreground">Company</h4>
-            <ul className="mt-4 space-y-2 text-sm text-foreground/60">
+            <h4 className="font-semibold">Company</h4>
+            <ul className="mt-4 space-y-2 text-sm opacity-70">
               <li>
-                <a href="#" className="transition-colors hover:text-foreground">
-                  About Us
+                <a href="#" className="transition-colors hover:text-accent">
+                  Tentang Kami
                 </a>
               </li>
               <li>
-                <a href="#" className="transition-colors hover:text-foreground">
+                <a href="#" className="transition-colors hover:text-accent">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="#" className="transition-colors hover:text-foreground">
-                  Careers
+                <a href="#" className="transition-colors hover:text-accent">
+                  Karir
                 </a>
               </li>
             </ul>
@@ -67,13 +57,13 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-foreground">Contact</h4>
-            <ul className="mt-4 space-y-2 text-sm text-foreground/60">
-              <li>Email: hello@cleanswift.com</li>
-              <li>Phone: +1 (555) 123-4567</li>
+            <h4 className="font-semibold">Hubungi Kami</h4>
+            <ul className="mt-4 space-y-2 text-sm opacity-70">
+              <li>Email: support@kliknclean.com</li>
+              <li>Phone: +62 (021) XXX-XXXX</li>
               <li>
-                <a href="#" className="transition-colors hover:text-foreground">
-                  Support
+                <a href="#" className="transition-colors hover:text-accent">
+                  Live Chat
                 </a>
               </li>
             </ul>
@@ -86,19 +76,19 @@ export function Footer() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mt-12 border-t border-border pt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
+          className="mt-12 pt-8 border-t border-white/10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
         >
-          <p className="text-sm text-foreground/60">
-            © 2024 CleanSwift. All rights reserved.
+          <p className="text-sm opacity-70">
+            © 2024 KliknClean. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-foreground/60 transition-colors hover:text-foreground">
+            <a href="#" className="opacity-70 transition-colors hover:text-accent">
               Privacy
             </a>
-            <a href="#" className="text-foreground/60 transition-colors hover:text-foreground">
+            <a href="#" className="opacity-70 transition-colors hover:text-accent">
               Terms
             </a>
-            <a href="#" className="text-foreground/60 transition-colors hover:text-foreground">
+            <a href="#" className="opacity-70 transition-colors hover:text-accent">
               Cookies
             </a>
           </div>

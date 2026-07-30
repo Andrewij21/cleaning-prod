@@ -26,8 +26,17 @@ export function HeroSection() {
 
   return (
     <section className="relative overflow-hidden pt-20 pb-16 md:pt-32 md:pb-24">
-      {/* Background gradient */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-secondary/5 to-transparent" />
+      {/* Background decorative circles */}
+      <motion.div
+        animate={{ scale: [1, 1.2, 1] }}
+        transition={{ duration: 8, repeat: Infinity }}
+        className="absolute top-20 right-10 w-48 h-48 rounded-full bg-accent/10 -z-10"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.1, 1] }}
+        transition={{ duration: 10, repeat: Infinity, delay: 0.5 }}
+        className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-secondary/10 -z-10"
+      />
 
       <div className="container px-4">
         <motion.div
@@ -39,53 +48,56 @@ export function HeroSection() {
           {/* Text Content */}
           <div className="flex flex-col gap-8">
             <motion.div variants={itemVariants} className="space-y-4">
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="text-base font-semibold text-accent"
-              >
-                Welcome to CleanSwift
-              </motion.p>
-              <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-                Your Home, Sparkling Clean
+              <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-foreground">
+                Jasa Cleaning Service Terbaik Se-Indonesia
               </h1>
               <p className="text-lg text-foreground/70">
-                Professional cleaning services delivered to your doorstep. Book in minutes, relax while we handle the rest.
+                Bersama KlikNClean bersih-bersih rumah hingga furniture hanya dengan satu <span className="text-primary font-semibold">Klik!</span>
               </p>
             </motion.div>
 
-            {/* CTA Buttons */}
-            <motion.div variants={itemVariants} className="flex gap-4 flex-wrap">
+            {/* CTA Button */}
+            <motion.div variants={itemVariants} className="flex gap-4">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="rounded-lg bg-primary px-8 py-3 font-semibold text-primary-foreground shadow-lg transition-all hover:shadow-xl"
+                className="rounded-full bg-[#2A3F5F] px-8 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl"
               >
-                Book Cleaning Service
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="rounded-lg border-2 border-primary px-8 py-3 font-semibold text-primary transition-all hover:bg-primary/5"
-              >
-                Learn More
+                Pesan Sekarang
               </motion.button>
             </motion.div>
 
-            {/* Trust Indicators */}
-            <motion.div variants={itemVariants} className="flex gap-8 pt-4">
-              <div>
-                <p className="text-2xl font-bold text-primary">500+</p>
-                <p className="text-sm text-foreground/60">Happy Customers</p>
+            {/* Feature Icons */}
+            <motion.div variants={itemVariants} className="grid grid-cols-5 gap-4 pt-4">
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <span className="text-primary text-xl">🛡️</span>
+                </div>
+                <p className="text-xs text-foreground/60 text-center font-medium">Terpercaya</p>
               </div>
-              <div>
-                <p className="text-2xl font-bold text-accent">4.9★</p>
-                <p className="text-sm text-foreground/60">Average Rating</p>
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center">
+                  <span className="text-secondary text-xl">⚙️</span>
+                </div>
+                <p className="text-xs text-foreground/60 text-center font-medium">Berkualitas</p>
               </div>
-              <div>
-                <p className="text-2xl font-bold text-primary">24/7</p>
-                <p className="text-sm text-foreground/60">Available</p>
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <span className="text-accent text-xl">✋</span>
+                </div>
+                <p className="text-xs text-foreground/60 text-center font-medium">Cepat</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <span className="text-primary text-xl">📅</span>
+                </div>
+                <p className="text-xs text-foreground/60 text-center font-medium">Fleksibel</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center">
+                  <span className="text-secondary text-xl">👔</span>
+                </div>
+                <p className="text-xs text-foreground/60 text-center font-medium">Professional</p>
               </div>
             </motion.div>
           </div>
@@ -108,26 +120,12 @@ export function HeroSection() {
                 className="object-cover"
                 priority
               />
-              {/* Overlay accent */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
             </motion.div>
 
-            {/* Floating Cards */}
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-              className="absolute -bottom-6 -left-6 rounded-xl bg-white shadow-xl p-4 border border-border dark:bg-card"
-            >
-              <p className="font-semibold text-foreground">✓ Verified Pros</p>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, delay: 0.2 }}
-              className="absolute top-10 -right-6 rounded-xl bg-white shadow-xl p-4 border border-border dark:bg-card"
-            >
-              <p className="font-semibold text-accent">100% Guaranteed</p>
-            </motion.div>
+            {/* Decorative striped accent */}
+            <div className="absolute -bottom-8 -right-8 w-32 h-32">
+              <div className="w-full h-full bg-gradient-to-tr from-primary to-accent opacity-20 rounded-lg transform rotate-45" />
+            </div>
           </motion.div>
         </motion.div>
       </div>
