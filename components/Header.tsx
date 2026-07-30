@@ -23,16 +23,22 @@ export function Header() {
 
         <nav className="hidden gap-8 md:flex">
           <Link
+            href="/"
+            className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
+          >
+            Home
+          </Link>
+          <Link
+            href="/about"
+            className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
+          >
+            Tentang Kami
+          </Link>
+          <Link
             href="#services"
             className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
           >
             Layanan
-          </Link>
-          <Link
-            href="#features"
-            className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
-          >
-            Tentang Kami
           </Link>
           <Link
             href="#contact"
