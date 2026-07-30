@@ -35,6 +35,12 @@ export function Header() {
             Tentang Kami
           </Link>
           <Link
+            href="/promo"
+            className="text-sm font-medium text-primary transition-colors hover:text-primary/80 font-semibold"
+          >
+            Promo
+          </Link>
+          <Link
             href="#services"
             className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
           >
