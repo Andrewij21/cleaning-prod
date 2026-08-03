@@ -1,30 +1,35 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const faqs = [
   {
     id: 1,
-    question: 'Apa itu KliknClean?',
-    answer: 'KliknClean adalah platform penyedia layanan jasa kebersihan untuk rumah Anda.',
+    question: "Apa itu Kinclong?",
+    answer:
+      "Kinclong adalah platform penyedia layanan jasa kebersihan profesional dan terpercaya untuk rumah, apartemen, hingga kantor Anda.",
   },
   {
     id: 2,
-    question: 'Jenis bangunan apa saja yang dapat menggunakan layanan General Cleaning?',
-    answer: 'Layanan General Cleaning kami dapat digunakan untuk rumah, apartemen, kantor, dan berbagai jenis bangunan komersial lainnya.',
+    question:
+      "Jenis bangunan apa saja yang dapat menggunakan layanan General Cleaning?",
+    answer:
+      "Layanan General Cleaning kami dapat digunakan untuk rumah tinggal, apartemen, kantor, ruko, dan berbagai jenis bangunan komersial lainnya.",
   },
   {
     id: 3,
-    question: 'Apa jadwal yang sudah dipesan dapat diubah?',
-    answer: 'Ya, Anda dapat mengubah jadwal pesanan melalui aplikasi KliknClean dengan memberikan pemberitahuan minimal 24 jam sebelumnya.',
+    question: "Apakah jadwal yang sudah dipesan dapat diubah?",
+    answer:
+      "Ya, Anda dapat mengubah jadwal pesanan melalui aplikasi Kinclong dengan memberikan pemberitahuan minimal 24 jam sebelum jadwal pengerjaan berlangsung.",
   },
   {
     id: 4,
-    question: 'Apakah ada garansi untuk layanan AC Cleaning?',
-    answer: 'Ya, semua layanan AC Cleaning kami dilengkapi dengan garansi kepuasan pelanggan. Jika tidak puas, kami akan melakukan pembersihan ulang tanpa biaya tambahan.',
+    question: "Apakah ada garansi untuk layanan AC Cleaning?",
+    answer:
+      "Ya, semua layanan AC Cleaning kami dilengkapi dengan garansi kepuasan pelanggan. Jika tidak puas, kami akan melakukan pembersihan ulang tanpa biaya tambahan.",
   },
-]
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -32,15 +37,15 @@ const containerVariants = {
     opacity: 1,
     transition: { staggerChildren: 0.1, delayChildren: 0.2 },
   },
-}
+};
 
 const itemVariants = {
   hidden: { opacity: 0, y: 10 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-}
+};
 
 export function FAQ() {
-  const [openId, setOpenId] = useState<number | null>(1)
+  const [openId, setOpenId] = useState<number | null>(1);
 
   return (
     <section className="bg-background py-20">
@@ -52,8 +57,9 @@ export function FAQ() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
+          {/* Judul disesuaikan menjadi Kinclong */}
           <h2 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-            Paling Sering Ditanyakan di KliknClean
+            Paling Sering Ditanyakan di Kinclong
           </h2>
         </motion.div>
 
@@ -75,14 +81,17 @@ export function FAQ() {
                   onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
                   className="flex w-full items-center justify-between px-6 py-4 text-left hover:bg-muted/50 transition-colors"
                 >
-                  <h3 className="font-semibold text-foreground">{faq.question}</h3>
+                  <h3 className="font-semibold text-foreground pr-4">
+                    {faq.question}
+                  </h3>
                   <motion.div
                     animate={{ rotate: openId === faq.id ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                     className="flex-shrink-0"
                   >
+                    {/* SVG diganti ke standar Chevron Down agar lebih cocok untuk Accordion */}
                     <svg
-                      className="h-6 w-6 text-primary"
+                      className="h-5 w-5 text-primary"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -91,7 +100,7 @@ export function FAQ() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                        d="M19 9l-7 7-7-7"
                       />
                     </svg>
                   </motion.div>
@@ -100,13 +109,13 @@ export function FAQ() {
                 <motion.div
                   initial={false}
                   animate={{
-                    height: openId === faq.id ? 'auto' : 0,
+                    height: openId === faq.id ? "auto" : 0,
                     opacity: openId === faq.id ? 1 : 0,
                   }}
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <div className="px-6 py-4 border-t border-border text-foreground/70">
+                  <div className="px-6 py-4 border-t border-border text-foreground/70 leading-relaxed">
                     {faq.answer}
                   </div>
                 </motion.div>
@@ -116,5 +125,5 @@ export function FAQ() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

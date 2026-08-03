@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import Link from 'next/link'
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function Header() {
   return (
@@ -17,7 +17,7 @@ export function Header() {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold text-primary"
           >
-            Klik<span className="text-foreground">N</span>Clean
+            KI<span className="text-foreground">N</span>CLONG
           </motion.div>
         </Link>
 
@@ -36,7 +36,7 @@ export function Header() {
           </Link>
           <Link
             href="/promo"
-            className="text-sm font-medium text-primary transition-colors hover:text-primary/80 font-semibold"
+            className="text-sm font-medium text-foreground/70 transition-colors hover:text-primary/80"
           >
             Promo
           </Link>
@@ -45,12 +45,6 @@ export function Header() {
             className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
           >
             Layanan
-          </Link>
-          <Link
-            href="#contact"
-            className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
-          >
-            Blog
           </Link>
         </nav>
 
@@ -63,5 +57,5 @@ export function Header() {
         </motion.button>
       </div>
     </motion.header>
-  )
+  );
 }

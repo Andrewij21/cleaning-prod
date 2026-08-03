@@ -1,33 +1,37 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 const features = [
   {
-    title: 'Tersebar Luas di Indonesia',
-    description: 'Hadir di Jakarta, Tangerang, Depok, Bekasi, Bogor,',
-    bgColor: 'bg-primary',
-    textColor: 'text-white',
+    title: "Tersebar Luas di Indonesia",
+    description:
+      "Kini kami hadir melayani wilayah Jakarta, Tangerang, Depok, Bekasi, Bogor, dan kota-kota besar lainnya.",
+    bgColor: "bg-primary",
+    textColor: "text-white",
   },
   {
-    title: 'Bisa Pilih Helper Sesuka Kamu',
-    description: 'Langganan Prepaid, kamu bisa pilih helper favorit kamu.',
-    bgColor: 'bg-secondary',
-    textColor: 'text-white',
+    title: "Pilih Helper Favoritmu",
+    description:
+      "Dengan berlangganan layanan Prepaid, kamu bebas memilih helper favorit untuk setiap jadwal kebersihanmu.",
+    bgColor: "bg-secondary",
+    textColor: "text-white",
   },
   {
-    title: 'Privasi Kamu Aman!',
-    description: 'Chat dan komunikasi hanya di aplikasi, aman no tipu-tipu!',
-    bgColor: 'bg-[#20C997]',
-    textColor: 'text-white',
+    title: "Privasi Terjamin Aman!",
+    description:
+      "Seluruh komunikasi dilakukan langsung melalui aplikasi. Data privasi kamu aman, terpercaya, dan bebas penipuan!",
+    bgColor: "bg-[#20C997]",
+    textColor: "text-white",
   },
   {
-    title: 'Bayar Pake Apa Aja Bisa!',
-    description: 'Metode pembayaran favorit kamu ada semua, mulai dari dompet',
-    bgColor: 'bg-[#1a2332]',
-    textColor: 'text-white',
+    title: "Bebas Pilih Metode Pembayaran",
+    description:
+      "Tersedia berbagai pilihan pembayaran yang memudahkanmu, mulai dari transfer bank, kartu kredit, hingga dompet digital.",
+    bgColor: "bg-[#1a2332]",
+    textColor: "text-white",
   },
-]
+];
 
 export function FeaturesSection() {
   const containerVariants = {
@@ -39,7 +43,7 @@ export function FeaturesSection() {
         delayChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -48,7 +52,7 @@ export function FeaturesSection() {
       y: 0,
       transition: { duration: 0.6 },
     },
-  }
+  };
 
   return (
     <section id="features" className="relative py-16 md:py-24">
@@ -64,7 +68,7 @@ export function FeaturesSection() {
           className="mb-16 text-center"
         >
           <h2 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-            Kenapa Harus KliknClean
+            Kenapa Harus Kinclong?
           </h2>
         </motion.div>
 
@@ -83,9 +87,7 @@ export function FeaturesSection() {
                 className={`${feature.bgColor} ${feature.textColor} rounded-xl p-8 transition-all hover:shadow-xl cursor-pointer min-h-[200px] flex flex-col justify-between`}
               >
                 <div>
-                  <h3 className="mb-3 text-xl font-bold">
-                    {feature.title}
-                  </h3>
+                  <h3 className="mb-3 text-xl font-bold">{feature.title}</h3>
                   <p className="text-sm opacity-90 leading-relaxed">
                     {feature.description}
                   </p>
@@ -96,5 +98,5 @@ export function FeaturesSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

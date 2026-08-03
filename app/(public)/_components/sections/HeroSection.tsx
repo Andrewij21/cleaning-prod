@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function HeroSection() {
   const containerVariants = {
@@ -13,7 +13,7 @@ export function HeroSection() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -22,11 +22,36 @@ export function HeroSection() {
       y: 0,
       transition: { duration: 0.8 },
     },
-  }
+  };
+
+  const kinclongFeatures = [
+    { name: "Kualitas", icon: "🌟", bg: "bg-primary/10", text: "text-primary" },
+    {
+      name: "Integritas",
+      icon: "🛡️",
+      bg: "bg-secondary/10",
+      text: "text-secondary",
+    },
+    { name: "Nyaman", icon: "✨", bg: "bg-accent/10", text: "text-accent" },
+    { name: "Cepat", icon: "⚡", bg: "bg-primary/10", text: "text-primary" },
+    {
+      name: "Layanan Prima",
+      icon: "🤝",
+      bg: "bg-secondary/10",
+      text: "text-secondary",
+    },
+    { name: "Optimal", icon: "🎯", bg: "bg-accent/10", text: "text-accent" },
+    { name: "Nyata", icon: "✅", bg: "bg-primary/10", text: "text-primary" },
+    {
+      name: "Garansi",
+      icon: "💯",
+      bg: "bg-secondary/10",
+      text: "text-secondary",
+    },
+  ];
 
   return (
     <section className="relative overflow-hidden pt-20 pb-16 md:pt-32 md:pb-24">
-      {/* Background decorative circles */}
       <motion.div
         animate={{ scale: [1, 1.2, 1] }}
         transition={{ duration: 8, repeat: Infinity }}
@@ -46,18 +71,20 @@ export function HeroSection() {
           className="grid gap-12 md:grid-cols-2 md:items-center"
         >
           {/* Text Content */}
-          <div className="flex flex-col gap-8">
-            <motion.div variants={itemVariants} className="space-y-4">
+          <div className="flex flex-col gap-8 ">
+            <motion.div variants={itemVariants} className="space-y-4 ml-12">
               <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-foreground">
                 Jasa Cleaning Service Terbaik Se-Indonesia
               </h1>
+              {/* Tagline di-update di sini */}
               <p className="text-lg text-foreground/70">
-                Bersama KlikNClean bersih-bersih rumah hingga furniture hanya dengan satu <span className="text-primary font-semibold">Klik!</span>
+                <span className="font-bold text-primary">Kinclong</span> –
+                Bersihnya Terasa, Nyamannya Menyeluruh.
               </p>
             </motion.div>
 
             {/* CTA Button */}
-            <motion.div variants={itemVariants} className="flex gap-4">
+            <motion.div variants={itemVariants} className="flex gap-4 ml-12">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -67,38 +94,29 @@ export function HeroSection() {
               </motion.button>
             </motion.div>
 
-            {/* Feature Icons */}
-            <motion.div variants={itemVariants} className="grid grid-cols-5 gap-4 pt-4">
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <span className="text-primary text-xl">🛡️</span>
+            {/* Feature Icons - Di-update menjadi 8 items (grid 4 kolom) */}
+            <motion.div
+              variants={itemVariants}
+              className="grid grid-cols-4 gap-y-6 gap-x-2 pt-4 "
+            >
+              {kinclongFeatures.map((feature, index) => (
+                <div key={index} className="flex flex-col items-center gap-2">
+                  <div
+                    className={`w-12 h-12 rounded-lg ${feature.bg} flex items-center justify-center`}
+                  >
+                    <span className={`text-xl ${feature.text}`}>
+                      {feature.icon}
+                    </span>
+                  </div>
+                  <p className="text-xs text-foreground/70 text-center font-medium leading-tight">
+                    {/* Logika untuk menebalkan huruf pertama agar akronim terlihat jelas */}
+                    <span className="font-extrabold text-foreground">
+                      {feature.name.charAt(0)}
+                    </span>
+                    {feature.name.slice(1)}
+                  </p>
                 </div>
-                <p className="text-xs text-foreground/60 text-center font-medium">Terpercaya</p>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center">
-                  <span className="text-secondary text-xl">⚙️</span>
-                </div>
-                <p className="text-xs text-foreground/60 text-center font-medium">Berkualitas</p>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <span className="text-accent text-xl">✋</span>
-                </div>
-                <p className="text-xs text-foreground/60 text-center font-medium">Cepat</p>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <span className="text-primary text-xl">📅</span>
-                </div>
-                <p className="text-xs text-foreground/60 text-center font-medium">Fleksibel</p>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center">
-                  <span className="text-secondary text-xl">👔</span>
-                </div>
-                <p className="text-xs text-foreground/60 text-center font-medium">Professional</p>
-              </div>
+              ))}
             </motion.div>
           </div>
 
@@ -130,5 +148,5 @@ export function HeroSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
