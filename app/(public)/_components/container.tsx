@@ -6,9 +6,6 @@ import { HowToOrder } from "@/app/(public)/_components/sections/HowToOrder";
 import { Partners } from "@/app/(public)/_components/sections/Partners";
 import { FAQ } from "@/app/(public)/_components/sections/FAQ";
 import { Promos } from "@/app/(public)/_components/sections/Promos";
-import { Footer } from "@/app/(public)/_components/sections/Footer";
-import { Chatbot } from "@/components/Chatbot";
-
 export default function Container() {
   return (
     <>
@@ -21,7 +18,6 @@ export default function Container() {
         <FAQ />
         <Promos />
       </main>
-      <Chatbot />
     </>
   );
 }
