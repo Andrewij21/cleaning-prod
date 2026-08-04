@@ -12,7 +12,7 @@ export function VisionMission() {
   ];
 
   return (
-    <section className="bg-background py-20">
+    <section className="bg-background py-20 mx-auto">
       <div className="container px-4">
         <div className="grid gap-12 md:grid-cols-2">
           {/* Card Visi */}
@@ -21,10 +21,10 @@ export function VisionMission() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="rounded-3xl bg-primary p-8 md:p-12 text-white shadow-xl flex flex-col justify-center"
+            className="rounded-3xl bg-primary p-8 md:p-12 text-white shadow-lg"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 flex items-center gap-4">
-              <span className="text-4xl">👁️</span> Visi Kami
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 flex items-center gap-4">
+              Visi Kami
             </h2>
             <p className="text-lg md:text-xl leading-relaxed opacity-95">
               "Menjadi perusahaan penyedia layanan kebersihan dan perawatan
@@ -42,7 +42,7 @@ export function VisionMission() {
             className="rounded-3xl bg-card border border-border p-8 md:p-12 shadow-lg"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground flex items-center gap-4">
-              <span className="text-4xl">🎯</span> Misi Kami
+              Misi Kami
             </h2>
             <ul className="space-y-4">
               {missionItems.map((item, index) => (

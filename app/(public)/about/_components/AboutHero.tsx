@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function AboutHero() {
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center justify-center bg-background pt-24 pb-16">
+    <section className="relative overflow-hidden min-h-screen flex items-center justify-center bg-background  pb-16">
       {/* Decorative elements */}
       <motion.div
         animate={{ scale: [1, 1.1, 1] }}

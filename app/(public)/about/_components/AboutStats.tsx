@@ -17,63 +17,77 @@ const itemVariants = {
 
 export function AboutStats() {
   return (
-    <section className="py-16 bg-primary/80">
-      <div className="container px-4">
+    <section className="py-20 bg-primary/90 px-12">
+      <div className="container mx-auto px-4">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="flex flex-row items-center"
         >
-          {/* Left side - Stats */}
-          <div className="space-y-12">
-            <motion.div variants={itemVariants}>
-              <h2 className="text-4xl font-bold text-white mb-3">
-                12+ Layanan
+          {/* Bottom side - Stats Grid (3 Columns) */}
+          <div className="grid grid-cols-1  gap-10 md:gap-8  max-w-6xl text-center ">
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col items-start"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                13+ Layanan
               </h2>
-              <p className="text-white/90 leading-relaxed">
-                KliknClean telah memiliki 13 layanan yang tersedia, mulai dari
+              <p className="text-white/90 leading-relaxed text-lg  text-left max-w-xl">
+                Kinclong telah memiliki 13 layanan yang tersedia, mulai dari
                 General Cleaning, Deep Cleaning, Layanan AC, Hydro Cleaning,
                 Cuci kasur, Sofa & Karpet, Cuci Mobil, Setrika, Pest Control,
-                Poles Marmer & Granit, Fogging Disinfektan, Treatment Kolam
-                Renang, Steam Cleaning, Paket Layanan, dan Prepaid.
+                Poles Marmer, Fogging Disinfektan, hingga Steam Cleaning.
               </p>
             </motion.div>
 
-            <motion.div variants={itemVariants}>
-              <h2 className="text-4xl font-bold text-white mb-3">9+ Kota</h2>
-              <p className="text-white/90 leading-relaxed">
-                Hadir memberikan solusi bagi kamu yang tinggal di area Jakarta,
-                Bogor, Depok, Tangerang, Bekasi, Bandung, Surabaya dan Bali.
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col items-start"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                9+ Kota
+              </h2>
+              <p className="text-white/90 leading-relaxed text-lg  text-left max-w-xl">
+                Hadir memberikan kenyamanan menyeluruh bagi kamu yang tinggal di
+                area Jakarta, Bogor, Depok, Tangerang, Bekasi, Bandung,
+                Surabaya, dan Bali.
               </p>
             </motion.div>
 
-            <motion.div variants={itemVariants}>
-              <h2 className="text-4xl font-bold text-white mb-3">
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col items-start"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 30+ Partner
               </h2>
-              <p className="text-white/90 leading-relaxed">
-                KliknClean percaya bahwa kolaborasi adalah kunci untuk layanan
-                terbaik, karena bekerja sama dengan mitra yang handal
-                memungkinkan kami terus berkembang dan meningkatkan kualitas.
+              <p className="text-white/90 leading-relaxed text-lg  text-left max-w-xl">
+                Kinclong percaya bahwa kolaborasi adalah kunci untuk layanan
+                terbaik. Bermitra dengan pihak handal memungkinkan kami terus
+                berkembang dan meningkatkan kualitas.
               </p>
             </motion.div>
           </div>
-
-          {/* Right side - Illustration placeholder with service icons */}
+          {/* Top side - Centered Illustration with service icons */}
           <motion.div
             variants={itemVariants}
-            className="relative h-96 flex items-center justify-center"
+            className="relative flex items-center justify-center mb-20 h-64 flex-1"
           >
             <div className="relative w-64 h-64">
               {/* Center mascot circle */}
               <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute inset-0 flex items-center justify-center"
+                animate={{ y: [0, -10, 0] }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute inset-0 flex items-center justify-center z-10"
               >
-                <div className="w-40 h-40 bg-white/20 rounded-full flex items-center justify-center border-4 border-white">
+                <div className="w-36 h-36 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-4 border-white shadow-xl">
                   <div className="text-6xl">👍</div>
                 </div>
               </motion.div>
@@ -92,15 +106,21 @@ export function AboutStats() {
                 <motion.div
                   key={idx}
                   animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity }}
+                  transition={{
+                    duration: 25,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
                   className="absolute w-full h-full"
                 >
                   <div
-                    className="absolute w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl shadow-lg"
+                    className="absolute w-12 h-12 bg-white rounded-full flex items-center justify-center text-xl shadow-lg"
                     style={{
                       left: "50%",
                       top: "50%",
-                      transform: `rotate(${item.angle}deg) translateY(-120px) rotate(-${item.angle}deg)`,
+                      transform: `rotate(${item.angle}deg) translateY(-140px) rotate(-${item.angle}deg)`,
+                      marginLeft: "-24px", // Memastikan ikon presisi di tengah garis orbit
+                      marginTop: "-24px",
                     }}
                   >
                     {item.icon}
